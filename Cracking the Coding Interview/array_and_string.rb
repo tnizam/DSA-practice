@@ -7,6 +7,17 @@
 =end
 
 def is_unique(str) 
-    char_hash = {}
-    
+    hash = {}
+
+    str.each_char do |char| 
+        if hash[char]
+            return false
+        else
+            hash[char] = true
+        end
+    end
+
+    return true
 end
+
+puts(is_unique("stre"))
