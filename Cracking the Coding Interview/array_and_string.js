@@ -35,7 +35,7 @@ function isUniqueChar(str) {
     return true;
 }
 
-console.log(isUniqueChar("stre"))
+// console.log(isUniqueChar("stre"))
 
 // time complexity: O(1 + n(1 + 1 + 1)) = 1 + 3n = n === 0(n)
 
@@ -79,3 +79,38 @@ function permutation(str1, str2) {
 
     return true;
 }
+
+console.log(permutation("hello", "ellloh"))
+
+// simplier solution
+
+function permutation2(str1, str2) {
+    if(str1.length !== str2.length) {
+        return false;
+    }
+
+    let hash = {};
+
+    for(let i = 0; i < str1.length; i++) {
+        if(hash[str1[i]]){
+            hash[str1[i]] += 1;
+        } else {
+            hash[str1[i]] = 1;
+        }
+    }
+
+    for(let i = 0; i < str2.length; i++) {
+        let char = str2[i];
+
+        if(hash[char] && hash[char] !== 0) {
+            hash[char] -= 1;
+        } else {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+// this is a different way to approach the problem
+// time complexity = O(n)
