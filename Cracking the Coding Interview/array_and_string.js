@@ -39,12 +39,43 @@ console.log(isUniqueChar("stre"))
 
 // time complexity: O(1 + n(1 + 1 + 1)) = 1 + 3n = n === 0(n)
 
+//-----------------------------------------------------------------------------
 
 // Check Permutation: Given two strings, write a method to decide 
 // if one is a permutation of the other. 
 
 // note: same letters but different order
 
-function permutation() {
-    
+function permutation(str1, str2) {
+    if(str1.length !== str2.length) {
+        return false;
+    }
+
+    let hash1 = {};
+    let hash2 = {};
+
+    for(let i = 0; i < str1.length; i++) {
+        let char1 = str1[i];
+        let char2 = str2[i];
+
+        if(hash1[char1]) {
+            hash1[char1] += 1;
+        } else {
+            hash1[char1] = 1;
+        }
+
+        if(hash2[char2]) {
+            hash2[char2] += 1;
+        } else {
+            hash2[char2] = 1;
+        }
+    }
+
+    for(let key in hash1) {
+        if(hash1[key] !== hash2[key]) {
+            return false;
+        }
+    }
+
+    return true;
 }
