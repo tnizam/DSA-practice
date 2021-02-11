@@ -114,3 +114,15 @@ function permutation2(str1, str2) {
 
 // this is a different way to approach the problem
 // time complexity = O(n)
+
+// -----------------------------------------------------------------------------
+
+// URLify: Write a method to replace all spaces in a string with '%20'. You may assume that the string
+// has sufficient space at the end to hold the additional characters, and that you are given the "true"
+// length of the string. (Note: If implementing in Java, please use a character array so that you can
+// perform this operation in place.) 
+
+// replace all spaces with '%20' 
+// end will not have %20
+// need to check if the space has a follow up char.
+
