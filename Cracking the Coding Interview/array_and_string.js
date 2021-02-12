@@ -80,7 +80,7 @@ function permutation(str1, str2) {
     return true;
 }
 
-console.log(permutation("hello", "ellloh"))
+// console.log(permutation("hello", "ellloh"))
 
 // simplier solution
 
@@ -123,6 +123,35 @@ function permutation2(str1, str2) {
 // perform this operation in place.) 
 
 // replace all spaces with '%20' 
-// end will not have %20
-// need to check if the space has a follow up char.
+// the true length of the string is given
+// subtract chars in the string without space from true length to see how many spaces we are allowed to replace
 
+function URLify(str, num) {
+    let newStr = "";
+    let count = 0;
+
+    for(let i = 0; i < str.length; i++) {
+        let char = str[i];
+        if(char !== " ") {
+            count ++;
+        }
+
+    }
+    
+    let space = num - count;
+
+    for(let i = 0; i < str.length; i++) {
+        let char = str[i];
+
+        if(char === " " && space > 0) {
+            newStr += "%20";
+            space -= 1;
+        } else if(char !== " "){
+            newStr += char;
+        }
+    }
+    
+    return newStr
+}
+
+console.log(URLify("hel lo", 5))
