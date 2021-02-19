@@ -154,7 +154,7 @@ function URLify(str, num) {
     return newStr
 }
 
-console.log(URLify("hel lo", 5))
+// console.log(URLify("hel lo", 5))
 
 // ------------------------------------------------------------------------------
 
@@ -164,5 +164,36 @@ console.log(URLify("hel lo", 5))
 
 // EXAMPLE
 // Input: Tact Coa
-// Output: True (permutations: "taco cat", "atco eta", etc.)
+// Output: True (permutations: "taco cat", "atco cta", etc.)
+
+// REMEMBER: permutation OF A palindrome!! 
+
+function paliPerm(str) {
+    let hash = {};
+    let count = 0;
+
+    for(let i = 0; i < str.length; i++) {
+        let char = str[i];
+
+        if(char === " ") {
+            continue; 
+        }
+
+        if(hash[char]) {
+            delete hash[char];
+        } else {
+            hash[char] = true;
+        }
+        count += 1;
+    }
+
+    if(count % 2 === 0) {
+        return Object.keys(hash).length === 0;
+    } else {
+        return Object.keys(hash).length === 1;
+    }
+
+}
+
+// console.log(paliPerm("aabcbcde"))
 
