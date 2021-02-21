@@ -64,6 +64,31 @@ end
 # // the true length of the string is given
 # // subtract chars in the string without space from true length to see how many spaces we are allowed to replace
 
-def URLify
+def URLify(str, num)
+    new_str = ""
+    count = 0
 
+    # first count how many characters there are without spaces
+    str.each_char do |char|
+        if char != " "
+            count += 1
+        end
+    end
+
+    # find the difference between the non space char and given true length
+
+    spaces = num - count
+
+    str.each_char do |char| 
+        if char === " " && spaces > 0
+            new_str += "%20"
+            spaces -= 1
+        elsif char != " "
+            new_str += char
+        end
+    end
+
+    return new_str
 end
+
+puts(URLify("hel lo", 6))
