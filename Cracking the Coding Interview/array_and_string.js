@@ -210,7 +210,7 @@ function paliPerm(str) {
 function oneAway(str1, str2) {
     let edit = 1;
     let long = str1.length > str2.length ? str1 : str2;
-    let short = str1.length < str2.length ? str2 : str1;
+    let short = str1.length <= str2.length ? str1 : str2;
     let maxLen = Math.max(str1.length, str2.length);
     let diff = long.length - short.length;
 
@@ -229,8 +229,8 @@ function oneAway(str1, str2) {
                 return false;   // edit
             }
             if(char1 === str2[j + 1]) { // inserted
-                j++;
-            } else if(str2[i + 1] === char2) { //removed
+                j++; // if inserted then we only move j up not i -- aligning the items
+            } else if(str1[i + 1] === char2) { //removed
                 i++;
             }
         }

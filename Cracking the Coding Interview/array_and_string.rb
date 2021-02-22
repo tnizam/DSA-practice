@@ -103,3 +103,48 @@ end
 # // pale, bale -> true
 # // pale, bake -> false
 
+def one_away(str1, str2) 
+    edits = 1;
+    long = str1.length > str2.length ? str1 : str2
+    short = str1.length <= str2.length ? str1 : str2
+
+    maxLen = [str1.length, str2.length].max
+    diff = long.length - short.length
+    # if diff is greater then 1 then it is false, more then 1 edit
+
+    return false if diff > edits
+
+    # inserted is when str1 is one shorter then str2
+
+    i = 0
+    j = 0
+
+    while i < maxLen || j < maxLen
+        char1 = long[i]
+        char2 = short[j]
+
+        # if the chars do not equal to eachother then proceed
+        # when they do not equal to eachother then enter the if statement 
+        # if the longest next char is char2 then something was inserted
+        # i+= will then rebalance!!
+        
+        if char1 != char2 
+            edits-=1
+            if edits < 0 # we want to check if the edits fall BELOW 0
+                return false
+            end
+
+            # inserted str1 is shorter then str2, char1 has to e
+            if long[i + 1] === char2
+                i+=1
+            end
+        end
+
+        i += 1
+        j += 1
+    end
+
+    return true
+end
+
+puts(one_away("pales", "pale"))
