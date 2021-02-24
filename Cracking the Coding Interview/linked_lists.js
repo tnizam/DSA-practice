@@ -21,7 +21,7 @@ class LinkedList {
 
 function removeDups(linkedList) {
     let dupSet = new Set();
-    let currentNode = linkedList.head;
+    let currentNode = linkedList;
     let prevNode = null;
 
     while(currentNode) {
