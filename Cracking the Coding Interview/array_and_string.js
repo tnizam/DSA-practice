@@ -38,3 +38,9 @@ function isUniqueChar(str) {
 console.log(isUniqueChar("stre"))
 
 // time complexity: O(1 + n(1 + 1 + 1)) = 1 + 3n = n === 0(n)
+
+
+// Check Permutation: Given two strings, write a method to decide 
+// if one is a permutation of the other. 
+
+// note: same letters but different order
