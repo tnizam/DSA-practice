@@ -42,3 +42,13 @@ function removeDups(linkedList) {
 
     return linkedList;
 }
+
+/*
+    2.2 Return Kth to Last: Implement an algorithm to find the kth to last element of a singly linked list
+
+    NOTES:
+    - example: find the 2/3/5th to last element of a singly linked list
+    - can only go one direction
+*/
+
+
