@@ -51,4 +51,21 @@ function removeDups(linkedList) {
     - can only go one direction
 */
 
+function kthToLast(linkedList, k) {
+    let length = 0;
+    let currentNode = linkedList;
 
+    while(currentNode !== null) { 
+        length += 1;
+        currentNode = currentNode.next;
+    }
+
+    let nodeNum = length - k;
+    currentNode = linkedList;
+
+    for(let i = 0; i < nodeNum; i++) {
+        currentNode = currentNode.next;    
+    }
+
+    return currentNode;
+}
