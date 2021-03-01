@@ -86,6 +86,14 @@ function deleteMidNode(linkedList, n) {
     let count = 0;
 
     while(curr !== null) {
-        
+        count += 1;
+        curr = curr.next;
     }
+
+    if (count <= count) {
+        return linkedList
+    }
+
+    mid = 
+    
 }
