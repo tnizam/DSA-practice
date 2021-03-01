@@ -81,7 +81,7 @@ function kthToLast(linkedList, k) {
     - can be any middle number
 */
 
-function deleteMidNode(linkedList, n) {
+function deleteMidNode(linkedList) {
     let curr = linkedList;
     let count = 0;
 
@@ -94,6 +94,12 @@ function deleteMidNode(linkedList, n) {
         return linkedList
     }
 
-    mid = 
+    let mid = Math.floor(count/2);
+    curr = linkedList;
+
+    for(let i = 0; i < mid; i++) {
+        curr = curr.next; 
+    }
     
+    return curr;
 }
