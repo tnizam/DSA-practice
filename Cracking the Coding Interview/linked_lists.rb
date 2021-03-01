@@ -12,6 +12,11 @@
     - keep checking down the line to see the next distinct node that is not the same
 =end
 
+class Node
+    attr_accessor :value
+    attr_accessor :next
+end
+
 def remove_dups(linked_list)
     uniq_set = Set.new 
     curr_node = linked_list
@@ -40,5 +45,11 @@ end
 =end
 
 def kth_to_last(linked_list, k)
-    
+    current_node = linked_list
+    length = 0
+
+    while current_node != null 
+        current_node = current_node.next
+        length += 1
+    end
 end
