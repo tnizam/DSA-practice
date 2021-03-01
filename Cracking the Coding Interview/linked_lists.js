@@ -64,21 +64,28 @@ function kthToLast(linkedList, k) {
     currentNode = linkedList;
 
     for(let i = 0; i < nodeNum; i++) {
-        currentNode = currentNode.next;    
+        currentNode = currentNode.next; 
     }
 
     return currentNode;
 }
 
 /*
-    2.3 Delete Middle Node: Implement an algorithm to delete a node in the middle (i.e., any node but
-    the first and last node, not necessarily the exact middle) of a singly linked list, given only access to
-    that node.
+    2.3 Delete Middle Node: Implement an algorithm to delete a node in the middle (i.e., any node but the first and last node, not necessarily the exact middle) of a singly linked list, given only access to that node.
     EXAMPLE
-    lnput:the node c from the linked lista->b->c->d->e->f
+    lnput:the node c from the linked list a->b->c->d->e->f
     Result: nothing is returned, but the new linked list looks like a->b->d->e->f
+
+    Notes
+    - has to be greater then two
+    - can be any middle number
 */
 
-function deleteMidNode() {
-    
+function deleteMidNode(linkedList, n) {
+    let curr = linkedList;
+    let count = 0;
+
+    while(curr !== null) {
+        
+    }
 }
