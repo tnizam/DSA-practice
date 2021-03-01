@@ -52,4 +52,8 @@ def kth_to_last(linked_list, k)
         current_node = current_node.next
         length += 1
     end
+
+    num = length - k
+
+    
 end
