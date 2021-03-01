@@ -54,6 +54,10 @@ def kth_to_last(linked_list, k)
     end
 
     num = length - k
+    current_node = linked_list
+    num.each do |i| 
+        current_node = current_node.next
+    end
 
-    
+    return current_node
 end
