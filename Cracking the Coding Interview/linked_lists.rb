@@ -61,3 +61,15 @@ def kth_to_last(linked_list, k)
 
     return current_node
 end
+
+=begin
+    2.3 Delete Middle Node: Implement an algorithm to delete a node in the middle (i.e., any node but the first and last node, not necessarily the exact middle) of a singly linked list, given only access to that node.
+    EXAMPLE
+    lnput:the node c from the linked list a->b->c->d->e->f
+    Result: nothing is returned, but the new linked list looks like a->b->d->e->f
+
+    Notes
+    - has to be greater then two
+    - can be any middle number
+=end
+
