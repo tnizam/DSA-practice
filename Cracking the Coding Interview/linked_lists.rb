@@ -73,3 +73,6 @@ end
     - can be any middle number
 =end
 
+def delmid(linkedList)
+
+end
