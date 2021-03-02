@@ -74,5 +74,11 @@ end
 =end
 
 def delmid(linkedList)
+    curr = linkedList
+    count = 0
 
+    while curr != null
+        count += 1
+        curr = curr.next
+    end
 end
