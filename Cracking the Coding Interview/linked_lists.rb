@@ -86,5 +86,9 @@ def delmid(linked_list)
     mid = (count/2).round()
     curr = linked_list
 
+    mid.each do |num|
+        curr = curr.next
+    end
 
+    return curr
 end
