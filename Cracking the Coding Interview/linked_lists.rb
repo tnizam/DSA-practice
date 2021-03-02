@@ -73,12 +73,18 @@ end
     - can be any middle number
 =end
 
-def delmid(linkedList)
-    curr = linkedList
+def delmid(linked_list)
+    curr = linked_list
     count = 0
 
     while curr != null
         count += 1
         curr = curr.next
     end
+
+    return linked_list if count <= 2
+    mid = (count/2).round()
+    curr = linked_list
+
+
 end
