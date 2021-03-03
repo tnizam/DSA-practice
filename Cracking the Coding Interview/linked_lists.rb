@@ -92,3 +92,4 @@ def delmid(linked_list)
 
     return curr
 end
+
