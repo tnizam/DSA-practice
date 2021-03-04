@@ -113,5 +113,7 @@ function deleteMidNode(linkedList) {
     Output:
         3 -> 1 -> 2 -> 10 -> 5 -> 5 -> 8
 
-    
+    NOTES
+    - all node < x --- come before ---- all nodes >= x
+
 */
