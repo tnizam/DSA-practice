@@ -20,5 +20,5 @@ var runningSum = function(nums) {
     }
     
     let sumArr = Object.values(sum);
-    return sums
+    return sumArr;
 };
