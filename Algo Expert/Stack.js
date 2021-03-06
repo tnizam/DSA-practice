@@ -42,6 +42,7 @@ class MinMaxStack {
 
   getMax() {
     // Write your code here.
+    return this.minMaxStack[this.minMaxStack.length - 1].max;
   }
 }
 
