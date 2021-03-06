@@ -5,8 +5,11 @@ class MinMaxStack {
 		this.stack = [];
 		
 	}
+
+    // this is the top of the stack
+    // meaning the last one in on the stack since the bottom most the 0 as index
   peek() {
-    // Write your code here.
+      return this.stack[this.stack.length - 1];
   }
 
   pop() {
