@@ -18,5 +18,5 @@ var runningSum = function(nums) {
         nums[i] = lastNum;
     }
     
-    return sumArr;
+    return nums;
 };
