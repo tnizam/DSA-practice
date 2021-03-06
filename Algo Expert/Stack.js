@@ -20,7 +20,7 @@ class MinMaxStack {
   }
 
   push(number) {
-
+    
   }
 
   getMin() {
