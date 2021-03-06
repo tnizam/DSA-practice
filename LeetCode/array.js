@@ -13,7 +13,10 @@ Return the running sum of nums.
 var runningSum = function(nums) {
     let sums = [];
     
-    
+    (nums.reduce((acc, n) => {
+        sums.push(acc)
+        return acc + n;
+    }))
     
     return nums;
 };
