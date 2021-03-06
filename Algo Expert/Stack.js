@@ -36,7 +36,8 @@ class MinMaxStack {
   }
 
   getMin() {
-    // Write your code here.
+    // get the min max of in the minMaxStack of a stack that is recording on minmax
+    return this.minMaxStack[this.minMaxStack.length - 1].min;
   }
 
   getMax() {
