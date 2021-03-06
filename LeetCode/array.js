@@ -16,8 +16,9 @@ var runningSum = function(nums) {
     
     for(let i = 0; i < nums.length; i++) {
         lastNum = lastNum + nums[i];
-        sums.push(lastNum);
+        sums[i] = lastNum;
     }
     
+    let sumArr 
     return sums
 };
