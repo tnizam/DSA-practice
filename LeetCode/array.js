@@ -11,12 +11,9 @@ Return the running sum of nums.
     keep the first number in the array and keep adding down the line
  */
 var runningSum = function(nums) {
-    let lastNum = 0;
+    let sums = [];
     
-    for(let i = 0; i < nums.length; i++) {
-        lastNum = lastNum + nums[i];
-        nums[i] = lastNum;
-    }
+    
     
     return nums;
 };
