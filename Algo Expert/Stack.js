@@ -2,6 +2,7 @@
 
 class MinMaxStack {
 	constructor() {
+    this.MinMaxStack = [] // will hold the minimum and max at any given moment
 		this.stack = [];
 		
 	}
@@ -12,12 +13,14 @@ class MinMaxStack {
       return this.stack[this.stack.length - 1];
   }
 
+  // pop from the top of the stack
   pop() {
-    // Write your code here.
+    this.MinMaxStack.pop(); // must be sync with the stack
+    return this.stack.pop();
   }
 
   push(number) {
-    // Write your code here.
+
   }
 
   getMin() {
