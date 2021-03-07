@@ -46,3 +46,8 @@ class MinMaxStack {
   }
 }
 
+// Balanced Brackets
+
+function balancedBrackets(string) {
+  // Write your code here.
+}
