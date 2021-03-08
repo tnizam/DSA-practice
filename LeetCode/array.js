@@ -56,3 +56,30 @@ Given the array candies and the integer extraCandies, where candies[i] represent
 For each kid check if there is a way to distribute extraCandies among the kids such that he or she can have the greatest number of candies among them. Notice that multiple kids can have the greatest number of candies.
 
 */
+
+var kidsWithCandies = function(candies, extraCandies) {
+    let newCandyNums = {};
+    let isGreater = {};
+    
+    for(let i = 0; i < candies.length; i++) {
+        let candy = candies[i];
+        let newCandies = candy + extraCandies;
+        newCandyNums[i] = newCandies;
+    }
+    
+    let extraSum = Object.entries(newCandyNums);
+    
+    for(let i = 0; i < candies.length; i++) {
+        let sum = extraSum[i];
+        
+        if(i !== sum[0] && sum[1] >= candies[i]) {
+            isGreater[i] = true;
+        } else {
+            isGreater[i] = false;
+        }
+    }
+    
+    let isGreaterArr = Object.values(isGreater);
+    return isGreaterArr;
+};
+
