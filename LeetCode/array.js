@@ -80,21 +80,3 @@ var kidsWithCandies = function(candies, extraCandies) {
     return arr;
 };
 
-/*
-Shuffle the Array
-
-Given the array nums consisting of 2n elements in the form [x1,x2,...,xn,y1,y2,...,yn].
-
-Return the array in the form [x1,y1,x2,y2,...,xn,yn].
-*/
-
-var shuffle = function(nums, n) {
-    let half = nums.length / 2;
-    let newArr = [];
-    
-    for(let i = 0; i < half; i += 1) {
-        newArr.push(nums[i], nums[n + i]);
-    }
-    
-    return newArr;
-};
