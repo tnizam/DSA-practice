@@ -93,10 +93,7 @@ var shuffle = function(nums, n) {
     let newArr = [];
     
     for(let i = 0; i < half; i += 1) {
-        let x = nums[i];
-        let y = nums[n + i];
-        newArr.push(x);
-        newArr.push(y);
+        newArr.push(nums[i], nums[n + i]);
     }
     
     return newArr;
