@@ -46,7 +46,7 @@ var maximumWealth = function(accounts) {
     return max;
 };
 
-console.log(maximumWealth([[1,5],[7,3],[3,5]]))
+// console.log(maximumWealth([[1,5],[7,3],[3,5]]))
 
 /*
 Kids With the Greatest Number of Candies
@@ -58,28 +58,24 @@ For each kid check if there is a way to distribute extraCandies among the kids s
 */
 
 var kidsWithCandies = function(candies, extraCandies) {
-    let newCandyNums = {};
     let isGreater = {};
+    let largest = 0;
     
     for(let i = 0; i < candies.length; i++) {
-        let candy = candies[i];
-        let newCandies = candy + extraCandies;
-        newCandyNums[i] = newCandies;
+        if(candies[i] >= largest) {
+            largest = candies[i];
+        }
     }
     
-    let extraSum = Object.entries(newCandyNums);
-    
     for(let i = 0; i < candies.length; i++) {
-        let sum = extraSum[i];
-        
-        if(i !== sum[0] && sum[1] >= candies[i]) {
+        let sum = candies[i] + extraCandies;
+        if(sum >= largest) {
             isGreater[i] = true;
         } else {
             isGreater[i] = false;
         }
     }
     
-    let isGreaterArr = Object.values(isGreater);
-    return isGreaterArr;
+    let arr = Object.values(isGreater);
+    return arr;
 };
-
