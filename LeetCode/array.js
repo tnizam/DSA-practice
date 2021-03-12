@@ -137,3 +137,22 @@ ruleKey == "color" and ruleValue == colori.
 ruleKey == "name" and ruleValue == namei.
 Return the number of items that match the given rule.
 */
+
+var countMatches = function(items, ruleKey, ruleValue) {
+    let count = 0;
+    
+    for(let i = 0; i < items.length; i++) {
+        console.log(items[i][1])
+        if(ruleKey === "type" && ruleValue === items[i][0]) {
+            count += 1;
+        } else if(ruleKey === "color" && ruleValue === items[i][1]) {
+            count += 1;
+        } else if(ruleKey === "name" && ruleValue === items[i][2]) {
+            count += 1;
+        }
+    }
+    
+    return count;
+};
+
+console.log(countMatches([["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], "color", "silver"));
