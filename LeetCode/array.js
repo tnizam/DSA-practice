@@ -142,7 +142,7 @@ var countMatches = function(items, ruleKey, ruleValue) {
     let count = 0;
     
     for(let i = 0; i < items.length; i++) {
-        console.log(items[i][1])
+        
         if(ruleKey === "type" && ruleValue === items[i][0]) {
             count += 1;
         } else if(ruleKey === "color" && ruleValue === items[i][1]) {
@@ -155,4 +155,11 @@ var countMatches = function(items, ruleKey, ruleValue) {
     return count;
 };
 
-console.log(countMatches([["phone","blue","pixel"],["computer","silver","lenovo"],["phone","gold","iphone"]], "color", "silver"));
+/*
+1365. How Many Numbers Are Smaller Than the Current Number
+
+Given the array nums, for each nums[i] find out how many numbers in the array are smaller than it. That is, for each nums[i] you have to count the number of valid j's such that j != i and nums[j] < nums[i].
+
+Return the answer in an array.
+*/
+
