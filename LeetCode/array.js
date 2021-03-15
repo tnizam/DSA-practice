@@ -179,3 +179,51 @@ var smallerNumbersThanCurrent = function(nums) {
     
     return min;
 };
+
+/*
+1086. High Five
+
+Given a list of the scores of different students, items, where items[i] = [IDi, scorei] represents one score from a student with IDi, calculate each student's top five average.
+
+Return the answer as an array of pairs result, where result[j] = [IDj, topFiveAveragej] represents the student with IDj and their top five average. Sort result by IDj in increasing order.
+
+A student's top five average is calculated by taking the sum of their top five scores and dividing it by 5 using integer division.
+
+*/
+
+var highFive = function(items) {
+    let avg = [];
+    let students = {};
+    
+    // this records each students length
+    
+    for(let i = 0; i < items.length; i++) {
+        let student = items[i];
+        
+        if(students[student[0]]) {
+            students[student[0]].push(student[1]);
+        } else {
+            students[student[0]] = [student[1]];
+        }
+    }
+    
+    for(let key in students) {
+        let scores = students[key];
+        if(scores.length <= 5) {
+            let sum = scores.reduce((a, b) => a + b, 0);
+            let average = Math.floor(sum/scores.length);
+            avg.push([key, average])
+        } else {
+            scores.sort((a, b) => b-a); // showing from highest to lowest
+            let sum = scores.slice(0,5).reduce((a, b) => a + b, 0);
+            let average = Math.floor(sum/5);
+            avg.push([key, average]);
+        }
+    }
+    
+    return avg;
+};
+
+let list = [[1,91],[1,92],[2,93],[2,97],[1,60],[2,77],[1,65],[1,87],[1,100],[2,100],[2,76]];
+
+console.log(highFive(list));
