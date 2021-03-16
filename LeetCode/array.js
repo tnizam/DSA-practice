@@ -224,6 +224,31 @@ var highFive = function(items) {
     return avg;
 };
 
-let list = [[1,91],[1,92],[2,93],[2,97],[1,60],[2,77],[1,65],[1,87],[1,100],[2,100],[2,76]];
+// let list = [[1,91],[1,92],[2,93],[2,97],[1,60],[2,77],[1,65],[1,87],[1,100],[2,100],[2,76]];
 
-console.log(highFive(list));
+// console.log(highFive(list));
+
+
+/*
+905. Sort Array By Parity
+
+Given an array A of non-negative integers, return an array consisting of all the even elements of A, followed by all the odd elements of A.
+
+You may return any answer array that satisfies this condition.
+
+*/
+
+var sortArrayByParity = function(A) {
+    let even = [];
+    let odd = [];
+    
+    for(let i = 0; i < A.length; i++){
+        if(A[i] % 2 === 0) {
+            even.push(A[i]);
+        } else {
+            odd.push(A[i]);
+        }
+    }
+    
+    return even.concat(odd);
+};
