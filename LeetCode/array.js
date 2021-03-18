@@ -252,3 +252,21 @@ var sortArrayByParity = function(A) {
     
     return even.concat(odd);
 };
+
+/*
+977. Squares of a Sorted Array
+
+Share
+Given an integer array nums sorted in non-decreasing order, return an array of the squares of each number sorted in non-decreasing order.
+*/
+
+var sortedSquares = function(nums) {
+    let squared = [];
+    
+    for(let i = 0; i < nums.length; i++){
+        squared.push(Math.pow(nums[i], 2));
+    }
+    
+    return squared.sort((a, b) => a-b);
+};
+
