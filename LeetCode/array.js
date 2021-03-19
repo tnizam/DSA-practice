@@ -279,3 +279,19 @@ Given an array A of strings made only from lowercase letters, return a list of a
 You may return the answer in any order.
 */
 
+var commonChars = function(A) {
+    let dups = [...A[0]];
+    
+    for(let i = 1; i < A.length; i++) {
+        
+        dups = dups.filter(letter => {
+            let length = A[i].length
+            A[i] = A[i].replace(letter, "")
+            
+            return length > A[i].length
+        })
+    }
+    
+    return dups;
+};
+
