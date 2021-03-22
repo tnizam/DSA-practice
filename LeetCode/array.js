@@ -352,3 +352,31 @@ var minimumAbsDifference = function(arr) {
     
     return min;
 };
+
+/*
+1413. Minimum Value to Get Positive Step by Step Sum
+
+Given an array of integers nums, you start with an initial positive value startValue.
+
+In each iteration, you calculate the step by step sum of startValue plus elements in nums (from left to right).
+
+Return the minimum positive value of startValue such that the step by step sum is never less than 1.
+ */
+
+var minStartValue = function(nums) {
+    let startVal = 1;
+    let sum = startVal;
+    
+    for(let i = 0; i < nums.length; i++) {
+        sum += nums[i];
+        
+        if(sum < 1) {
+            startVal += 1;
+            sum = startVal;
+            i = -1;
+            continue;
+        }
+    }
+    
+    return startVal;
+};
