@@ -380,3 +380,15 @@ var minStartValue = function(nums) {
     
     return startVal;
 };
+
+var minStartVal = function(nums) {
+    var stv = (min = 0);
+    console.log(min)
+   nums.map((x) => (min = Math.min(min, (stv += x))));
+   console.log(stv)
+   return 1 - min;
+ };
+
+ let nums = [-3,2,-3,4,2];
+
+ console.log(minStartVal(nums));
