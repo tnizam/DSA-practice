@@ -392,3 +392,29 @@ var minStartVal = function(nums) {
  let nums = [-3,2,-3,4,2];
 
  console.log(minStartVal(nums));
+
+/*
+243. Shortest Word Distance
+
+Given an array of strings wordsDict and two different strings that already exist in the array word1 and word2, return the shortest distance between these two words in the list.
+*/
+
+var shortestDistance = function(wordsDict, word1, word2) {
+    let dist1 = null;
+    let dist2 = null;
+    let min = Infinity;
+    
+    for(let i = 0; i < wordsDict.length; i++) {
+        if(wordsDict[i] === word1) {
+            dist1 = i;
+        } else if(wordsDict[i] === word2) {
+            dist2 = i;
+        }
+        
+        if(dist1 !== null && dist2 !== null) {
+            min = Math.min(min, Math.abs(dist1 - dist2));
+        }
+    }
+    
+    return min;
+};
