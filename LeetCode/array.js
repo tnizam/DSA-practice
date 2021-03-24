@@ -418,3 +418,30 @@ var shortestDistance = function(wordsDict, word1, word2) {
     
     return min;
 };
+
+/*
+169. Majority Element
+
+Given an array nums of size n, return the majority element.
+
+The majority element is the element that appears more than ⌊n / 2⌋ times. You may assume that the majority element always exists in the array.
+*/
+
+var majorityElement = function(nums) {
+    let numCount = {};
+    let ele = null;
+    
+    for(let i = 0; i < nums.length; i++) {
+        if(numCount[nums[i]]) {
+            numCount[nums[i]] += 1;
+        } else {
+            numCount[nums[i]] = 1;
+        }
+        
+        if(numCount[nums[i]] >= (nums.length/2)) {
+            ele = nums[i];
+        }
+    }
+    
+    return ele;
+};
