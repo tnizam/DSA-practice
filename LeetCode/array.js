@@ -383,15 +383,15 @@ var minStartValue = function(nums) {
 
 var minStartVal = function(nums) {
     var stv = (min = 0);
-    console.log(min)
+    // console.log(min)
    nums.map((x) => (min = Math.min(min, (stv += x))));
-   console.log(stv)
+//    console.log(stv)
    return 1 - min;
  };
 
  let nums = [-3,2,-3,4,2];
 
- console.log(minStartVal(nums));
+//  console.log(minStartVal(nums));
 
 /*
 243. Shortest Word Distance
@@ -492,4 +492,21 @@ var maxProfit = function(prices) {
     }
     
     return profit;
+};
+
+// 283. Move Zeroes
+
+var moveZeroes = function(nums) {
+    let len = nums.length;
+    
+    for(let i = 0; i < len; i++){
+        if(nums[i] === 0) {
+            nums.splice(i, 1);
+            nums.push(0);
+            i = i - 1;
+            len--;
+        }
+    }
+    
+    return nums;
 };
