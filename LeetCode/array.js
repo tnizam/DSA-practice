@@ -527,3 +527,28 @@ var isMonotonic = function(A) {
     
     return increase || decrease;
 };
+
+// 217. Contains Duplicate
+
+var containsDuplicate = function(nums) {
+    let charCount = {};
+    
+    for(let i = 0; i < nums.length; i++) {
+        if(charCount[nums[i]]){
+            charCount[nums[i]] += 1;
+            return true;
+        } else {
+            charCount[nums[i]] = 1;
+        }
+    }
+    
+    return false;
+};
+
+// or 
+
+var containsDuplicate = function(nums) {
+    let set = new Set(nums);
+    
+    return set.size < nums.length;
+};
