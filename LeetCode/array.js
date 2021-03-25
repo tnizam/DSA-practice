@@ -445,3 +445,26 @@ var majorityElement = function(nums) {
     
     return ele;
 };
+
+// 1629. Slowest Key
+
+var slowestKey = function(releaseTimes, keysPressed) {
+  
+    let longest = releaseTimes[0];
+    let longestKey = [keysPressed[0]];
+    
+    for(let i = 1; i < keysPressed.length; i++) {
+        let diff = releaseTimes[i] - releaseTimes[i - 1];
+        
+        if(diff === longest) {
+            longestKey.push(keysPressed[i]);
+        } else if(diff > longest) {
+            longest = diff;
+            longestKey = [keysPressed[i]];
+        }
+    }
+    
+    longestKey.sort();
+    
+    return longestKey[longestKey.length - 1];
+};
