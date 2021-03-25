@@ -468,3 +468,28 @@ var slowestKey = function(releaseTimes, keysPressed) {
     
     return longestKey[longestKey.length - 1];
 };
+
+// 122. Best Time to Buy and Sell Stock II
+
+// var maxProfit = function(prices) {
+//     let profit = 0;
+    
+//     for(let i = 0; i < prices.length - 1; i++) {
+//         let possible = prices[i + 1] - prices[i];
+//         profit = Math.max(profit, profit + possible);
+//     }
+    
+//     return profit;
+// };
+
+var maxProfit = function(prices) {
+    let profit = 0;
+    
+    for(let i = 0; i < prices.length - 1; i++) {
+        if(prices[i + 1] > prices[i]) {
+            profit += prices[i + 1] - prices[i];
+        }
+    }
+    
+    return profit;
+};
