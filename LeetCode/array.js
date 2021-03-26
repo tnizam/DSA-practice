@@ -589,3 +589,20 @@ var findDisappearedNumbers = function(nums) {
     
     return missing;
 };
+
+// 167. Two Sum II - Input array is sorted
+
+var twoSum = function(numbers, target) {
+    let nums = {};
+    
+    for(let i = 0; i < numbers.length; i++) {
+        nums[numbers[i]] = i;
+    }
+    
+    for(let i = 0; i < numbers.length; i++) {
+        let diff = target - numbers[i];
+        if(nums[diff]) {
+            return [i + 1, nums[diff] + 1]
+        }
+    }
+};
