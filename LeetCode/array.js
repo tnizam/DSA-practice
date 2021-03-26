@@ -553,7 +553,7 @@ var containsDuplicate = function(nums) {
     return set.size < nums.length;
 };
 
-// 448
+// 448. Find All Numbers Disappeared in an Array
 
 var findDisappearedNumbers = function(nums) {
     let set = new Set(nums);
@@ -568,4 +568,24 @@ var findDisappearedNumbers = function(nums) {
     return missing;
 };
 
-console.log(findDisappearedNumbers([4,3,2,7,8,2,3,1]))
+// or 
+
+var findDisappearedNumbers = function(nums) {
+    let missing = [];
+    
+    for(let i = 0; i < nums.length; i++) {
+        let index = Math.abs(nums[i]) - 1;
+        
+        if(nums[index] > 0) {
+            nums[index] *= -1;
+        }
+    }
+    
+    for(let i = 0; i < nums.length; i++) {
+        if(nums[i] > 0) {
+            missing.push(i + 1);
+        }
+    }
+    
+    return missing;
+};
